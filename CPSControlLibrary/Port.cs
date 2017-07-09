@@ -5,6 +5,32 @@ namespace CPSControlLibrary
 {
     public abstract class Port : UserControl
     {
+        private int index;
+        private double data;
+        //Index属性
+        public int Index
+        {
+            get
+            {
+                return index;
+            }
+            set
+            {
+                index = value;
+            }
+        }
+        //Value属性
+        public double Value
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
+            }
+        }
         protected System.ComponentModel.IContainer components = null;
 
 
