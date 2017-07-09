@@ -1,13 +1,12 @@
-﻿using System.Windows.Forms;
-using System;
-using System.Drawing;
+﻿using System.Drawing;
+using System.Windows.Forms;
+
 namespace CPSControlLibrary
 {
     public abstract class Port : UserControl
-    {
+    { 
         protected System.ComponentModel.IContainer components = null;
-
-
+        Point pPoint, cPoint;
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -55,8 +54,31 @@ namespace CPSControlLibrary
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
+            this.AllowDrop = true;
+            this.pictureBox.MouseDown += Mouse_Down;
+            this.pictureBox.MouseMove += Mouse_Move;
+            this.pictureBox.MouseUp += Mouse_Up;
+        }
+        private void Mouse_Down(object sender, MouseEventArgs e)
+        {
+            pPoint = Cursor.Position;
+        }
+        
+        private void Mouse_Move(object sender, MouseEventArgs e)
+        {
+            //当鼠标左键按下时才触发
+            if (e.Button == MouseButtons.Left)
+            {
+                cPoint = Cursor.Position; //获得当前鼠标位置
+                int x = cPoint.X - pPoint.X;
+                int y = cPoint.Y - pPoint.Y;
+                this.Location = new Point(this.Location.X + x, this.Location.Y + y);
+                pPoint = cPoint;
+            }
+        }
 
-
+        private void Mouse_Up(object sender, MouseEventArgs e)
+        {
 
         }
         protected void Initial_Context()
