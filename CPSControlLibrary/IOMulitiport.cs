@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CPSControlLibrary
 {
-    class IOMultiport : Port
+   public  class IOMultiport : Port
     {
         public IOMultiport()
         {
@@ -25,9 +26,12 @@ namespace CPSControlLibrary
         }
         private void IOmultiport_DoubleClick(object sender, EventArgs e)
         {
-            EditParameters edit = new EditParameters();
+            PictureBox iomul = (PictureBox)sender;
+            EditParameters edit = new EditParameters(this);
             edit.label_width.Visible = true;
             edit.textBox_width.Visible = true;
+            edit.Name = "EditParameters for port" + this.Index;
+            edit.Text = edit.Name;
             edit.Show();
         }
     }

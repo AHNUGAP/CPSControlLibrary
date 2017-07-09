@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Windows.Forms;
 
 
 namespace CPSControlLibrary
 {
-    class IOport : Port
+    public  class IOport : Port
     {
         public IOport()
         {
@@ -22,7 +23,10 @@ namespace CPSControlLibrary
         }
         private void IOput_DoubleClick(object sender, EventArgs e)
         {
-            EditParameters edit = new EditParameters();
+            PictureBox io = (PictureBox)sender;
+            EditParameters edit = new EditParameters(this);
+            edit.Name = "EditParameters for port" + this.Index;
+            edit.Text = edit.Name;
             edit.Show();
         }
     }

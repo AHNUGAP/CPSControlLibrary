@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CPSControlLibrary
 {
@@ -31,7 +28,10 @@ namespace CPSControlLibrary
         }
         private void Output_DoubleClick(object sender, EventArgs e)
         {
-            EditParameters edit = new EditParameters();
+            PictureBox output = (PictureBox)sender;
+            EditParameters edit = new EditParameters(this);
+            edit.Name = "EditParameters for port" + this.Index;
+            edit.Text = edit.Name;
             edit.Show();
         }
     }

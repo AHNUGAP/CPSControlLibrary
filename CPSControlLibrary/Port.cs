@@ -5,7 +5,7 @@ namespace CPSControlLibrary
 {
     public abstract class Port : UserControl
     {
-        private int index;
+        private  int index;
         private double data;
         //Index属性
         public int Index

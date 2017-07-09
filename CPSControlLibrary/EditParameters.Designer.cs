@@ -38,7 +38,7 @@
             this.button_remove = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.button_commit = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_value = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -131,13 +131,14 @@
             this.button_commit.TabIndex = 26;
             this.button_commit.Text = "Commit";
             this.button_commit.UseVisualStyleBackColor = true;
+            this.button_commit.Click += new System.EventHandler(this.button_commit_Click);
             // 
-            // textBox1
+            // textBox_value
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(472, 21);
-            this.textBox1.TabIndex = 25;
+            this.textBox_value.Location = new System.Drawing.Point(180, 32);
+            this.textBox_value.Name = "textBox_value";
+            this.textBox_value.Size = new System.Drawing.Size(472, 21);
+            this.textBox_value.TabIndex = 25;
             // 
             // label1
             // 
@@ -163,7 +164,7 @@
             this.Controls.Add(this.button_remove);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.button_commit);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_value);
             this.Controls.Add(this.label1);
             this.Name = "EditParameters";
             this.Text = "EditParameters";
@@ -184,7 +185,7 @@
         private System.Windows.Forms.Button button_remove;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_commit;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_value;
         private System.Windows.Forms.Label label1;
     }
 }
