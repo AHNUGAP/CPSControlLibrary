@@ -4,7 +4,37 @@ using System.Windows.Forms;
 namespace CPSControlLibrary
 {
     public abstract class Port : UserControl
+<<<<<<< HEAD
     { 
+=======
+    {
+        private int index;
+        private double data;
+        //Index属性
+        public int Index
+        {
+            get
+            {
+                return index;
+            }
+            set
+            {
+                index = value;
+            }
+        }
+        //Value属性
+        public double Value
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
+            }
+        }
+>>>>>>> dec066efce2025b51169f1e24e50c6d6c73fa187
         protected System.ComponentModel.IContainer components = null;
         Point pPoint, cPoint;
         protected override void Dispose(bool disposing)
